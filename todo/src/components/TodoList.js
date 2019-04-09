@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addItem, toggleItem } from '../actions';
+import { addItem, toggleItem, deleteItem } from '../actions';
 
 class TodoList extends React.Component {
 	state = {
@@ -24,6 +24,11 @@ class TodoList extends React.Component {
 		this.props.toggleItem(value);
 	};
 
+	deleteTask = (e, value) => {
+		e.preventDefault();
+		this.props.deleteItem(value);
+	};
+
 	render() {
 		return (
 			<div className="todo-list-container">
@@ -34,6 +39,13 @@ class TodoList extends React.Component {
 							<li onClick={() => this.toggleComplete(item.value)}>
 								{item.value}
 								{item.completed && <p>check</p>}
+								<button
+									onClick={(e) => {
+										this.deleteTask(e, item.value);
+									}}
+								>
+									delete
+								</button>
 							</li>
 						))}
 				</ul>
@@ -55,4 +67,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { addItem, toggleItem })(TodoList);
+export default connect(mapStateToProps, { addItem, toggleItem, deleteItem })(TodoList);

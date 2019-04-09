@@ -16,3 +16,12 @@ export const toggleItem = (value) => {
 		payload : value
 	};
 };
+
+export const DELETE_ITEM = 'DELETE_ITEM';
+
+export const deleteItem = (value) => {
+	return {
+		type    : DELETE_ITEM,
+		payload : value
+	};
+};

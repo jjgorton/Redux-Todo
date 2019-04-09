@@ -1,4 +1,4 @@
-import { ADD_ITEM, TOGGLE_ITEM } from '../actions';
+import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from '../actions';
 
 const initialState = {
 	todos : [
@@ -33,6 +33,17 @@ const reducer = (state = initialState, action) => {
 						};
 					} else {
 						return item;
+					}
+				})
+			};
+		case DELETE_ITEM:
+			return {
+				...state,
+				todos : state.todos.filter((item) => {
+					if (item.value !== action.payload) {
+						return {
+							...item
+						};
 					}
 				})
 			};

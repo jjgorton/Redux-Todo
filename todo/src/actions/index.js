@@ -7,3 +7,12 @@ export const addItem = (newItem) => {
 		payload : newItem
 	};
 };
+
+export const TOGGLE_ITEM = 'TOGGLE_ITEM';
+
+export const toggleItem = (value) => {
+	return {
+		type    : TOGGLE_ITEM,
+		payload : value
+	};
+};

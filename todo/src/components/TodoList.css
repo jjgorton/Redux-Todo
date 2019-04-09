@@ -1,0 +1,42 @@
+.todo-list-container {
+	width: 600px;
+	margin: 20px auto;
+	background: silver;
+	border: 10px solid maroon;
+	padding: 20px;
+}
+
+.list {
+	background: rgba(41, 9, 9, 0.26);
+	padding: 20px;
+}
+
+.list li {
+	background: whitesmoke;
+	border: 2px solid gray;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-decoration: none;
+	text-align: center;
+	margin: 20px;
+	padding: 5px;
+}
+
+.check {
+	width: 30px;
+	display: flex;
+}
+
+.delete {
+	background: rgb(165, 1, 1);
+	font-weight: bold;
+}
+
+input {
+	height: 30px;
+}
+
+.add {
+	height: 36px;
+}
